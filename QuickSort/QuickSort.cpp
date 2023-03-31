@@ -83,9 +83,28 @@ if (low < j)                                     //Langkah 11
     swap(low, j);
     mov_count++;
     }
+    //Sort the list on the left of pivot using quick sort
+q_short(low, j - 1);                            // Langkah 12
+    //Sort the list on the right of pivot using quick sort
+q_short(j + 1, high);                            // Langkah 13
+
+void display() {
+    cout << "\n==========" << endl;
+    cout << "==Sorted Array==" << endl;
+    cout << "==========" << endl;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n\nNumber of comparasions: " << cmp_count << endl;
+    cout << "Number of data movement: " << mov_count << endl;
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    input();
+    //Sort the array using quick sort
+    q - short(0, n - 1);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
