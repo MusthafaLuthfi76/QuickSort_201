@@ -23,6 +23,7 @@ void input() {
     cout << "====================" << endl;
 
     for (int i = 0; i < n; i++)
+
     {
         cout << "<" << (i + 1) << ">";
         cin >> arr[i];
@@ -62,18 +63,20 @@ void q_short(int low, int high)
         cmp_count++;
         //Search for an elemen less than or equal to pivot
         while ((arr[j] > pivot) && (j >= low))      //Langkah 7
+        {
             j--;                                    //Langkah 8
+            cmp_count++;
+        }
         cmp_count++;
+        if (i < j)                                       //Langkah 9
+            // If greater element is on left of the element
+        {
+            //Swap the element at index i with the element at index j
+            swap(i, j);
+            mov_count++;
+        }
+            
     }
-    cmp_count++;
-    if (i < j)                                       //Langkah 9
-        // If greater element is on left of the element
-    {
-        //Swap the element at index i with the element at index j
-        swap(i, j);
-        mov_count++;
-    }   
-    cmp_count++;
     //j now containt the index of the last element in the sort list
     if (low < j)                                     //Langkah 11
         //Move the pivot to its correct position in the list
