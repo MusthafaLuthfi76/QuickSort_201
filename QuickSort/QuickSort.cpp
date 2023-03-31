@@ -76,6 +76,13 @@ void q_short(int low, int high)
 
 }
 
+//j now containt the index of the last element in the sort list
+if (low < j)                                     //Langkah 11
+    //Move the pivot to its correct position in the list
+    {
+    swap(low, j);
+    mov_count++;
+    }
 int main()
 {
     std::cout << "Hello World!\n";
