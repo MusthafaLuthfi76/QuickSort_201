@@ -37,6 +37,45 @@ void swap(int x, int y)
     arr[x] = arr[y];
     arr[y] = temp;
 }
+
+void q_short(int low, int high)
+{
+    int pivot, i, j;
+    if (low > high)     // Langkah 1
+        return;
+
+    //Partition the list into two parts
+    //One containing elemen less than that or equal to pivot
+    //Outher containing elemen greater than pivot
+    pivot = arr[low];     // Langkah 2
+    i = low + 1;         // Langkah 3
+    j = high;            // Langkah 4
+
+    while (i <= j)   // Langkah 10
+    {
+        //Search for elemen greater than pivot
+        while ((arr[i] <= pivot) && (i <= high))    // Langkah 5
+        {
+            i++;                                    // Langkah 6
+            cmp_count++;
+        }
+        cmp_count++;
+        //Search for an elemen less than or equal to pivot
+        while ((arr[j] > pivot) && (j >= low))      //Langkah 7
+            j--;                                    //Langkah 8
+        cmp_count++;
+    }
+    cmp_count++;
+    if (i < j)                                       //Langkah 9
+        // If greater element is on left of the element
+    {
+        //Swap the element at index i with the element at index j
+        swap(i, j);
+        mov_count++;
+    }   
+
+}
+
 int main()
 {
     std::cout << "Hello World!\n";
