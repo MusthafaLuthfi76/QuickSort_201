@@ -6,7 +6,13 @@ int arr[20];
 int cmp_count = 0;  // Number of comparison
 int mov_count = 0;  // Number of movement
 int n;
-
+void input() {
+    while (true)
+    {
+        cout << "Masukkan panjang elemen array :";
+        cin >> n;
+    }
+}
 int main()
 {
     std::cout << "Hello World!\n";
