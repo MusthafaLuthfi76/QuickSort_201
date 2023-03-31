@@ -73,20 +73,21 @@ void q_short(int low, int high)
         swap(i, j);
         mov_count++;
     }   
-
-}
-
-//j now containt the index of the last element in the sort list
-if (low < j)                                     //Langkah 11
-    //Move the pivot to its correct position in the list
+    cmp_count++;
+    //j now containt the index of the last element in the sort list
+    if (low < j)                                     //Langkah 11
+        //Move the pivot to its correct position in the list
     {
-    swap(low, j);
-    mov_count++;
+        swap(low, j);
+        mov_count++;
     }
     //Sort the list on the left of pivot using quick sort
-q_short(low, j - 1);                            // Langkah 12
+    q_short(low, j - 1);                            // Langkah 12
     //Sort the list on the right of pivot using quick sort
-q_short(j + 1, high);                            // Langkah 13
+    q_short(j + 1, high);                            // Langkah 13
+}
+
+
 
 void display() {
     cout << "\n==========" << endl;
